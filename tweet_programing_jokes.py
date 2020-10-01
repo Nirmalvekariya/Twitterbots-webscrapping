@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from tweepy  import OAuthHandler, API
 import time
+import numpy
 
 
 r=requests.get("https://worstjokesever.com/programming?sort=date")
