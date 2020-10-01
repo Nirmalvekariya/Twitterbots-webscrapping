@@ -2,17 +2,18 @@ import requests
 from bs4 import BeautifulSoup
 from tweepy  import OAuthHandler, API
 import time
-import numpy
 
-
+# Get content from the provided url
 r=requests.get("https://worstjokesever.com/programming?sort=date")
 c = r.content
 
-jokes = []     #creating list for storing jokes
+# Create list to store all the jokes.
+jokes = []    
 
-
+# Create instance of BeautifulSoup to parse HTML.
 soup = BeautifulSoup(c, "html.parser")
 
+# Find all "section"
 jocking=soup.find_all("section",{"class":"Article__content"})
 
 #getting jokes from website
